@@ -1,10 +1,10 @@
 API
 ==========================================
 
-.. automodule:: __init__
+.. automodule:: app
          :members:
          :undoc-members:
 
-.. automodule:: routes
+.. automodule:: app.routes
          :members:
          :undoc-members:
