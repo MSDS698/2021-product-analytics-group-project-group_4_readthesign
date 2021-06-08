@@ -2,7 +2,7 @@ version: "3"
 services:
   web:
     build:
-      context: ../app
+      context: code
       dockerfile: dockerfile
     ports:
       - "80:80"
@@ -28,15 +28,15 @@ services:
   #     - read_sign_network
 
   # Janson model container 
-  services: 
-    dl_model:
-      build:
-        context: ../src
-        dockerfile: dockerfile
-      ports:
-        - "80:80"
-        - AWS_ACCESS_KEY_ID=${AWS_ACCESS_KEY_ID}
-        - AWS_SECRET_ACCESS_KEY=${AWS_SECRET_ACCESS_KEY}
+  # services: 
+  #   dl_model:
+  #     build:
+  #       context: ../src
+  #       dockerfile: dockerfile
+  #     ports:
+  #       - "80:80"
+  #       - AWS_ACCESS_KEY_ID=${AWS_ACCESS_KEY_ID}
+  #       - AWS_SECRET_ACCESS_KEY=${AWS_SECRET_ACCESS_KEY}
 
 
 
