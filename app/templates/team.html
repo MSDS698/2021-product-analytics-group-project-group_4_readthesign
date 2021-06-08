@@ -11,7 +11,7 @@
 <body>
     <div class="container">
         <div class="header">
-            <h2>ASL TRANSLATION</h2>
+            <h2>Meet Our Team</h2>
             <h4><a href="/"><span id="color">
                     Home
                 </span></a>
@@ -19,17 +19,51 @@
             <!-- <a href="/about">About</a> -->
             <h4><a href="/about">About</a></h4>
             <h4><a href="team">TEAM</a></h4>
-            <h4>Services</h4>
-            <h4>Clients</h4>        
+            <h4><a href="services">Services</a></h4>
+            <h4><a href="clients">Clients</a></h4>        
         </div>
 
     <div class="main-content">
-        {% for name in names %}
-            <h2>{{name}}</h2>
+        <div class="activities">
+            <div class="subheader">
+                <h2>Executives</h2>
+            </div>
+            {% for name in names %}
+                {% if name.name == 'Trevor Santiago' %}
+                    <h3>{{name.name}}</h3>
+                    <h6>{{name.title}}</h6>
+                    <!-- div class='left'>
+                        <div id="image"></div>
+                        <img src="/Users/efar/Downloads/product analytics/project /app/templates/Kyle.jpeg" alt="">
+                    </div> -->
+                {% endif %}
+                {% if name.name == 'Kyle Brook' %}
+                    <h3>{{name.name}}</h3>
+                    <h6>{{name.title}}</h6>
+                {% endif %}
+        {% endfor %}
+        </div>
+        <div class="activities" id="middle-activities">
+            <div class="subheader">
+                <h2>Data Science Team</h2>
+            </div>
+            {% for name in names %}
+                {% if name.title == 'Data Scientist' %}
+                    <h3>{{name.name}}</h3>
+                    <h6>{{name.title}}</h6>
+                {% endif %}
         {% endfor %}
 
-    </div>
-        
-       
-        
+        </div>
+        <div class="activities" id="middle-activities">
+            <div class="subheader">
+                <h2>Software Engineering</h2>
+            </div>
+            {% for name in names %}
+                {% if name.title == 'Software Engineer' %}
+                    <h3>{{name.name}}</h3>
+                    <h6>{{name.title}}</h6>
+                {% endif %}
+        {% endfor %}
+       </div>
 </body>
