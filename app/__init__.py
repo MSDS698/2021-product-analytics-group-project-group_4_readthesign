@@ -11,7 +11,6 @@ from flask_login import LoginManager
 app = Flask(__name__)
 app.secret_key = os.urandom(24)
 
-# routes.py needs to import "application" variable in __init__.py (Altough it violates PEP8 standards)
 
 app.config.from_object(Config)
 db = SQLAlchemy(app)
