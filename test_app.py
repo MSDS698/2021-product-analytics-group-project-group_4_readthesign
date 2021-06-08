@@ -1,7 +1,7 @@
 from app import app
 
-def test_app():
+def test():
     """
-    test availability of app
+    implement pytest
     """
     assert app is not None
