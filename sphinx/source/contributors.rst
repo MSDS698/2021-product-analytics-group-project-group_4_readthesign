@@ -9,7 +9,6 @@ Contributors
 |
 | **Engineers**
 | Efrem Ghebreab
-| Binaya Tripathi
 | Dawn (Shuyan Li)
 |
 | **Data scientists**
