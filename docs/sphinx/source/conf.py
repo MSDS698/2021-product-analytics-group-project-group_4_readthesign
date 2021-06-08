@@ -17,8 +17,8 @@ sys.path.insert(0, os.path.abspath('../../../'))
 
 # -- Project information -----------------------------------------------------
 
-project = 'ASL Translator'
-copyright = '2021, ReadTheSign'
+project = 'ReadTheSign'
+copyright = '2021, ReadTheSign Developers'
 author = 'Kyle Brooks, Trevor Santiago, Efrem Ghebreab, Binaya Tripathi, Dawn (Shuyan Li), Ye Tao, Wonseok Choi, Anni Liu'
 
 # The full version, including alpha/beta/rc tags
