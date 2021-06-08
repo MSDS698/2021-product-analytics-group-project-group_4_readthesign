@@ -14,7 +14,7 @@ Welcome to ASL Translator's documentation!
    contributors
    requirements
    tutorial
-   api
+   code
 
 
 Indices and tables

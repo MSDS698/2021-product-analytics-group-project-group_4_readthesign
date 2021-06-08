@@ -1,9 +1,5 @@
-API
+Code
 ==========================================
-
-.. automodule:: app
-         :members:
-         :undoc-members:
 
 .. automodule:: app.routes
          :members:
