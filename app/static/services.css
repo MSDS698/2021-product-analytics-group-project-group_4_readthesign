@@ -1,0 +1,144 @@
+*{
+    margin: 0px;
+    padding: 0px;
+}
+.container{
+    width: 1200px;
+    min-height: 900px;
+    background-color: FFFFFF;
+    border: black solid 10px;
+    margin: auto;
+}
+.header{
+    height: 40px;
+    background-color: black;
+    padding: 25px;
+    margin: auto;
+}
+
+.header h2, h4{
+    display: inline-block;
+    color: rgb(192, 183, 147);
+    vertical-align: top;
+    /* margin-top: 20px; */
+}
+.header h4{
+    width: 110px;
+    margin-left: 30px;
+    font-size: 20px;
+    text-align: right;
+    padding-left: 10px;
+}
+
+.header h2{
+    font-size: 25px;
+    font: larger;
+    padding-left: 10px;
+}
+.main-content{
+    width: 1160px;
+    min-height: 500px;
+    margin: auto;
+    padding: 20px;
+}
+.main-content img{
+    width: 100%;
+}
+.activities{
+    width: 800px;
+    height: 900px;
+    background-color: #1468A8;
+    padding: 25px;
+    display: inline-block;
+    vertical-align: top;
+    margin-top: 15px;
+}
+.activities h2{
+    color: cornsilk;
+    font-size: 30px;
+}
+.subheader h2, img{
+    display: inline-block;
+    vertical-align: middle;
+}
+.activities p{
+    margin-top: 15px;
+    text-align: left;
+}
+.activities button{
+    padding: 10px 30px;
+    background-color: #198FD9;
+    border-radius: 5px;
+    color: white;
+    text-align: center;
+    font-size: 20px;
+    margin-top: 35px;
+}
+#middle-activities{
+    margin-left: 10px;
+    margin-right: 10px;
+}
+.lower-content{
+    width: 377px;
+    height: 213px;
+    display: inline-block;
+    vertical-align: top;
+    margin-top: 25px;
+}
+.lower-content img{
+    padding-top: 5px;
+    width: 100%;
+}
+.lower-content P{
+    color: black;
+    font-size: 15px;
+    padding: 5px;
+    text-align: left;
+}
+#middle{
+    margin-top: 35px;
+    margin-left: 10px;
+    margin-right: 10px;
+}
+#link{
+    margin-top: 20px;
+}
+#link a{
+    padding: 5px;
+    text-align: left;
+    text-decoration-line: none;
+    color:#198FD9 ;
+    font-size: 20px;
+}
+#quote{
+    min-height: 80px;
+    background-color:#DAEDFF;
+    padding: 20px;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    
+}
+#quote p{
+    text-align: center;
+    font: italic;
+    font-size: 20px;
+}
+#name a{
+    text-decoration-line: none;
+    color: black;
+}
+.footer{
+    height: 30px;
+    background-color:#DAEDFF;
+    border-top: black solid 2px;
+    padding: 20px;
+    text-align: center;
+}
+.footer a{
+    text-decoration-line: none;
+    color: cadetblue;
+    padding: 15px;
+}
+#color{
+    color: #198FD9;
+}

@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Consulting</title>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='style.css') }}" > 
+
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h2>Welcome {{form.username}}</h2>
+            <h4>
+                <span id="color">
+                    Home
+                </span>
+            </h4>
+            <h4><a href="/about">About</a></h4>
+            <h4><a href="team">TEAM</a></h4>
+            <h4><a href="services">Services</a></h4>
+            <h4><a href="clients">Clients</a></h4>       
+        </div>
+    <div class="main-content">
+        <div class="activities">
+            <div class="subheader">
+                <h2>Our Service</h2>
+            </div>
+            <p>Given the prevalence of disabling hearing loss in society, our product is envisioned to be an application that would translate from American Sign Language (ASL) to English. Included in our customer segment are families/workplaces with ASL users and schools ......
+            </p>
+            <button>More info</button>
+        </div>
+        <div class="activities">
+            <button><a href="/">Logout</a></button>
+        </div>
+        <div class="lower-content">
+            <h3>THE WORLD CAN BE YOURS!</h3>
+            <div id="image"></div>
+            <img src="building.png" alt="">
+        </div>
+        <div class="lower-content" id="middle">
+            <p>Given the prevalence of disabling hearing loss in society, our product is envisioned to be an application that would translate from American Sign Language (ASL) to English. Included in our customer segment are families/workplaces with ASL users and schools that may want a more efficient way for ASL users to communicate with students/teachers.
+           </p>
+            <p>check out our custom solutions and services.</p>
+            <div id="link">
+                <a href="Learn more">Learn more</a>
+            </div>
+        </div>
+        <div class="lower-content">
+            <div id="quote">
+                <p>"We are here to change your future. How can we help you today?."</p>
+            </div>
+            <div id="name">
+                <a href="/team">Kyle Brooks, CEO</a>
+                <a href="/team">Trevor, CTO</a>
+            </div>
+        </div>        
+    </div>
+    <div class="footer">
+        <a href="">Home</a>
+        <a href="">About</a>
+        <a href="">Services</a>
+        <a href="">Team</a>
+        <a href="">Clients</a>
+    </div>
+    </div>
+</body>
+</html>
+
