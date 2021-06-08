@@ -3,6 +3,7 @@ services:
   web:
     build:
       context: ../app
+      dockerfile: dockerfile
     ports:
       - "80:80"
     environment:
