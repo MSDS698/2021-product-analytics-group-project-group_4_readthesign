@@ -91,7 +91,7 @@ def register():
 
         user_count = classes.User.query.filter_by(username=username).count() \
                      + classes.User.query.filter_by(email=email).count()
-        if (user_count > 0):
+        if user_count > 0:
             return '<h1>Error - Existing user : ' + username \
                    + ' OR ' + email + '</h1>'
         else:
