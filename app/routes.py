@@ -9,13 +9,13 @@ from flask_login import current_user, login_user, login_required, logout_user
 import os 
 
 team_list = [
-		{'name': 'Kyle Brook', 'title': "CEO"},
-		{'name': 'Trevor Santiago', 'title': "CTO"},
-		{'name': 'Efrem Ghebreab', 'title': "Data Scientist"},
-		{'name': 'Winseok Choi', 'title': "Software Engineer"},
-		{'name': 'Anni Liu ', 'title': "Data Scientist"},
-		{'name': 'Dawn(shuyan Li)', 'title': "Software Engineer"},
-		{'name': 'Janson(Ye Tao)', 'title': "Data Scientist"}
+    {'name': 'Kyle Brook', 'title': "CEO"},
+    {'name': 'Trevor Santiago', 'title': "CTO"},
+    {'name': 'Efrem Ghebreab', 'title': "Data Scientist"},
+    {'name': 'Wonseok Choi', 'title': "Software Engineer"},
+    {'name': 'Anni Liu ', 'title': "Data Scientist"},
+    {'name': 'Dawn(shuyan Li)', 'title': "Software Engineer"},
+    {'name': 'Janson(Ye Tao)', 'title': "Data Scientist"}
 ]
 
 # --------------------------------
@@ -23,33 +23,35 @@ team_list = [
 # --------------------------------
 @app.route('/')
 def index():
-	return render_template('index.html')
+    return render_template('index.html')
 
 # --------------------------------
 # about page
 # --------------------------------
 @app.route('/about')
 def about():
-	return render_template('about.html')
+    return render_template('about.html')
 
 # --------------------------------
 # our teams page
 # --------------------------------
 @app.route('/team')
 def team():
-	return render_template('team.html', names=team_list)
+    return render_template('team.html', names=team_list)
+
 # --------------------------------
 # Service route
 # --------------------------------
 @app.route('/services')
 def services():
-	return render_template('services.html')
+    return render_template('services.html')
+
 # --------------------------------
 # Clients route
 # --------------------------------
 @app.route('/clients')
 def clients():
-	return render_template('clients.html')
+    return render_template('clients.html')
 
 # --------------------------------
 # file uploading
@@ -79,7 +81,6 @@ def upload():
 # --------------------------------
 # Regsitration form 
 # --------------------------------
-
 @app.route('/register',  methods=('GET', 'POST'))
 def register():
     registration_form = classes.RegistrationForm()
@@ -103,7 +104,6 @@ def register():
 # --------------------------------
 # Login form 
 # --------------------------------
-
 @app.route('/login', methods=['GET', 'POST'])
 def login():
     login_form = classes.LogInForm()
@@ -126,4 +126,4 @@ def login():
 # --------------------------------
 @app.route('/')
 def logout():
-	return render_template('index.html') 
+    return render_template('index.html')

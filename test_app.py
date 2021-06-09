@@ -1,7 +1,7 @@
-from app import app
+from app import *
 
-def test():
+def test_api_call():
     """
-    implement pytest
+    unit test for app.py
     """
     assert app is not None

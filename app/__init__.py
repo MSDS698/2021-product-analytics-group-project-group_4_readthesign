@@ -6,7 +6,7 @@ from flask_sqlalchemy import SQLAlchemy
 from flask_login import LoginManager
 
 # Initialization 
-#  create an app instance that handles requests 
+# Create an app instance that handles requests
 
 app = Flask(__name__)
 app.secret_key = os.urandom(24)
@@ -23,4 +23,3 @@ login_manager.init_app(app)
 
 from app import routes
 from app import classes 
-
