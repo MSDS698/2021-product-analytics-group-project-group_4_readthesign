@@ -117,9 +117,10 @@ def login():
     return render_template('login.html', form=login_form)
 
 
-@app.route('/')
+@app.route('/logout')
 def logout():
     """
     Log out
     """
-    return render_template('index.html')
+    logout_user()
+    return redirect(url_for('index'))
