@@ -24,7 +24,7 @@ def index():
     """
     Home page
     """
-    return render_template('index.html')
+    return render_template('index.html', authenticated_user=current_user.is_authenticated)
 
 
 @app.route('/about')
