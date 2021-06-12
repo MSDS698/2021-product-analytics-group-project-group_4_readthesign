@@ -1,5 +1,5 @@
 from app import app, classes, db
-from flask import render_template, redirect, url_for
+from flask import render_template, redirect, url_for, flash
 from flask_wtf import FlaskForm
 from flask_wtf.file import FileField, FileRequired
 from wtforms import SubmitField
@@ -41,26 +41,6 @@ def team():
     teams page
     """
     return render_template('team.html', names=team_list)
-
-
-@app.route('/services')
-def services():
-    """
-    Service route
-    """
-    return render_template('services.html')
-
-# --------------------------------
-# Clients route
-# --------------------------------
-
-
-@app.route('/clients')
-def clients():
-    """
-    Clients route
-    """
-    return render_template('clients.html')
 
 
 class UploadFileForm(FlaskForm):
@@ -105,8 +85,8 @@ def register():
         user_count = classes.User.query.filter_by(username=username).count() \
             + classes.User.query.filter_by(email=email).count()
         if user_count > 0:
-            return '<h1>Error - Existing user : ' + username \
-                   + ' OR ' + email + '</h1>'
+            flash('Error - Existing user : ' + username
+                   + ' OR ' + email)
         else:
             user = classes.User(username, email, password)
             db.session.add(user)
@@ -130,8 +110,9 @@ def login():
         # Login and validate the user.
         if user is not None and user.check_password(password):
             login_user(user)
-            return render_template('welcome.html', form=username)
-            # return("<h1> Welcome {}!</h1>".format(username))
+            return redirect(url_for('index'))
+        else:
+            flash('Invalid username and password combination')
 
     return render_template('login.html', form=login_form)
 
