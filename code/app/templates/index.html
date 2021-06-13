@@ -1,0 +1,66 @@
+{% extends "layouts/base.html" %}
+
+{% block title %} Home {% endblock %}
+
+<!-- Specific Page CSS goes HERE  -->
+{% block stylesheets %}{% endblock stylesheets %}
+
+{% block content %}
+
+<!-- Main content -->
+<section class="slice py-7">
+    <div class="container">
+        <div class="row row-grid align-items-center">
+            <div class="col-12 col-md-5 col-lg-6 order-md-2 text-center">
+                <!-- Image -->
+                <figure class="w-100">
+                    <img alt="Image placeholder" src="/static/assets/img/svg/illustrations/illustration-3.svg"
+                        class="img-fluid mw-md-120">
+                </figure>
+            </div>
+            <div class="col-12 col-md-7 col-lg-6 order-md-1 pr-md-5">
+                <!-- Heading -->
+                <h1 class="display-4 text-center text-md-left mb-3">
+                    <a target="_blank" href="https://appseed.us/boilerplate-code/flask-boilerplate">
+                        ReadThe<strong class="text-primary">Sign</strong>
+                    </a>
+                </h1>
+                <!-- Text -->
+                <p class="lead text-center text-md-left text-muted">
+                    This is placeholder text
+                </p>
+                <!-- Buttons -->
+                <div class="text-center text-md-left mt-5">
+                    <a href="/login" class="btn btn-primary btn-icon" target="_blank">
+                        <span class="btn-inner--text">Login</span>
+                        <span class="btn-inner--icon"><i data-feather="chevron-right"></i></span>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="slice slice-lg pt-lg-6 pb-0 pb-lg-6 bg-section-secondary">
+    <div class="container">
+        <!-- Title -->
+        <!-- Section title -->
+        <div class="row mb-5 justify-content-center text-center">
+            <div class="col-lg-6">
+                <div class="mt-2">
+                    <p class="lead lh-180">Given the prevalence of disabling hearing loss in society,
+                        our product is envisioned to be an application that would
+                        translate from American Sign Language (ASL) to English.
+                        Included in our customer segment are families/workplaces
+                        with ASL users and schools that may want a more efficient
+                        way for ASL users to communicate with students/teachers.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+{% endblock content %}
+
+<!-- Specific Page JS goes HERE  -->
+{% block javascripts %}{% endblock javascripts %}
