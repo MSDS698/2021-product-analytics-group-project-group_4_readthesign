@@ -4,6 +4,7 @@ from werkzeug.security import check_password_hash
 from werkzeug.security import generate_password_hash
 from wtforms import PasswordField, StringField, SubmitField
 from wtforms.validators import DataRequired
+from flask_wtf.file import FileField, FileRequired
 
 from app import db, login_manager
 # from app import db, lm
@@ -35,6 +36,13 @@ class LogInForm(FlaskForm):
     username = StringField('Username:', validators=[DataRequired()])
     password = PasswordField('Password:', validators=[DataRequired()])
     submit = SubmitField('Login')
+
+class UploadFileForm(FlaskForm):
+    """
+    Class for uploading file when submitted
+    """
+    file_selector = FileField('File', validators=[FileRequired()])
+    submit = SubmitField('Submit')
 
 db.create_all()
 db.session.commit()

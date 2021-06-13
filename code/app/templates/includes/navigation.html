@@ -14,14 +14,20 @@
         <div class="collapse navbar-collapse" id="navbarCollapse">
             <ul class="navbar-nav mt-4 mt-lg-0 ml-auto">
                 <li class="nav-item ">
-                    <a class="nav-link" rel="noopener noreferrer" href="/">Home</a>
+                    <a class="nav-link" href="/">Home</a>
                 </li>
                 <li class="nav-item ">
-                    <a class="nav-link" rel="noopener noreferrer" href="/about">About</a>
+                    <a class="nav-link" href="/about">About</a>
                 </li>
+                {% if authenticated_user %}
+                <li class="nav-item">
+                    <a class="nav-link" href="/upload">Translate</a>
+                </li>
+                {% else %}
                 <li class="nav-item ">
-                    <a class="nav-link" rel="noopener noreferrer" href="/register">Register</a>
+                    <a class="nav-link" href="/register">Register</a>
                 </li>
+                {% endif %}
             </ul>
             <!-- Button -->
             {% if authenticated_user %}
@@ -36,8 +42,7 @@
 
             <!-- Mobile button -->
             <div class="d-lg-none text-center">
-                <a href="https://appseed.us/boilerplate-code/flask-boilerplate" target="_blank"
-                    rel="noopener noreferrer" class="btn btn-block btn-sm btn-warning">See more details</a>
+                <a href="/login" rel="noopener noreferrer" class="btn btn-block btn-sm btn-primary">Login</a>
             </div>
         </div>
     </div>

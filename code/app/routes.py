@@ -2,23 +2,10 @@ from app import app, classes
 # from app.models import User
 # from app.forms  import LoginForm, RegisterForm
 from flask import render_template, redirect, url_for, flash
-from flask_wtf import FlaskForm
-from flask_wtf.file import FileField, FileRequired
-from wtforms import SubmitField
 from flask_login import current_user, login_user, login_required, logout_user
 
 # from flask import Flask
 import os
-
-team_list = [
-    {'name': 'Kyle Brook', 'title': "CEO"},
-    {'name': 'Trevor Santiago', 'title': "CTO"},
-    {'name': 'Efrem Ghebreab', 'title': "Data Scientist"},
-    {'name': 'Wonseok Choi', 'title': "Software Engineer"},
-    {'name': 'Anni Liu ', 'title': "Data Scientist"},
-    {'name': 'Dawn(shuyan Li)', 'title': "Software Engineer"},
-    {'name': 'Janson(Ye Tao)', 'title': "Data Scientist"}
-]
 
 
 @app.route('/')
@@ -34,31 +21,16 @@ def about():
     """
     About page
     """
-    return render_template('about.html')
-
-
-@app.route('/team')
-def team():
-    """
-    teams page
-    """
-    return render_template('team.html', names=team_list)
-
-
-class UploadFileForm(FlaskForm):
-    """
-    Class for uploading file when submitted
-    """
-    file_selector = FileField('File', validators=[FileRequired()])
-    submit = SubmitField('Submit')
+    return render_template('about.html', authenticated_user=current_user.is_authenticated)
 
 
 @app.route('/upload', methods=['GET', 'POST'])
+@login_required
 def upload():
     """
     Upload a file from a client machine
     """
-    file = UploadFileForm()  # file : UploadFileForm class instance
+    file = classes.UploadFileForm()  # file : UploadFileForm class instance
     if file.validate_on_submit():  # Check if it is a POST request and if it is valid.
         f = file.file_selector.data  # f : Data of FileField
         filename = f.filename
@@ -70,7 +42,7 @@ def upload():
         f.save(file_path)
 
         return redirect(url_for('index'))  # Redirect to / (/index) page.
-    return render_template('upload.html', form=file)
+    return render_template('upload.html', form=file, authenticated_user=current_user.is_authenticated)
 
 
 @app.route('/register',  methods=('GET', 'POST'))
@@ -128,6 +100,24 @@ def logout():
     return redirect(url_for('index'))
 
 
+@app.errorhandler(401)
+def re_route(e):
+    return redirect(url_for('login'))
+
+
+@app.errorhandler(403)
+def re_route(e):
+    return render_template('page-403.html')
+
+
 @app.errorhandler(404)
 def re_route(e):
     return render_template('page-404.html')
+
+
+@app.errorhandler(500)
+def re_route(e):
+    return render_template('page-500.html')
+
+
+
