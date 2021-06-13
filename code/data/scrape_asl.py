@@ -55,12 +55,11 @@ def search_ASL(driver, words):
         driver.find_element_by_xpath('/html/body/div[3]/div/div/form/div/div/div/span/button/span').click()
         time.sleep(3)
         res = get_video_urls(driver, word, res)
-        print(str(res).replace("'", '"'))
         driver.back()
         driver.find_element_by_xpath('/html/body/div[3]/div/div/form/div/div/div/input').clear()
 
-        with open('test', 'w') as f:
-            f.write(str(res).replace("'", '"'))
+#         with open('test', 'w') as f:
+#             f.write(str(res).replace("'", '"'))
 
     return str(res)
 
