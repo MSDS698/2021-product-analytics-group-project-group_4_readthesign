@@ -19,12 +19,13 @@
                 <li class="nav-item ">
                     <a class="nav-link" href="/about">About</a>
                 </li>
-                <li class="nav-item ">
-                    <a class="nav-link" href="/register">Register</a>
-                </li>
                 {% if authenticated_user %}
                 <li class="nav-item">
                     <a class="nav-link" href="/upload">Translate</a>
+                </li>
+                {% else %}
+                <li class="nav-item ">
+                    <a class="nav-link" href="/register">Register</a>
                 </li>
                 {% endif %}
             </ul>
