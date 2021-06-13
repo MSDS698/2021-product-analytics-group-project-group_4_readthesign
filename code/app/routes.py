@@ -21,7 +21,7 @@ def about():
     """
     About page
     """
-    return render_template('about.html')
+    return render_template('about.html', authenticated_user=current_user.is_authenticated)
 
 
 @app.route('/upload', methods=['GET', 'POST'])
@@ -42,7 +42,7 @@ def upload():
         f.save(file_path)
 
         return redirect(url_for('index'))  # Redirect to / (/index) page.
-    return render_template('upload.html', form=file)
+    return render_template('upload.html', form=file, authenticated_user=current_user.is_authenticated)
 
 
 @app.route('/register',  methods=('GET', 'POST'))
