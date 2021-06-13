@@ -92,7 +92,7 @@ def register():
             db.session.add(user)
             db.session.commit()
             return redirect(url_for('index'))
-    return render_template('register.html', form=registration_form)
+    return render_template('page-register.html', form=registration_form)
 
 
 @app.route('/login', methods=['GET', 'POST'])
@@ -114,7 +114,7 @@ def login():
         else:
             flash('Invalid username and password combination')
 
-    return render_template('login.html', form=login_form)
+    return render_template('page-login.html', form=login_form)
 
 
 @app.route('/logout')
@@ -124,3 +124,8 @@ def logout():
     """
     logout_user()
     return redirect(url_for('index'))
+
+
+@app.errorhandler(404)
+def re_route(e):
+    return render_template('page-404.html')
