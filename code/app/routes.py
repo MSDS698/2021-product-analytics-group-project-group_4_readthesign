@@ -100,10 +100,24 @@ def logout():
     return redirect(url_for('index'))
 
 
+@app.errorhandler(401)
+def re_route(e):
+    return redirect(url_for('login'))
+
+
+@app.errorhandler(403)
+def re_route(e):
+    return render_template('page-403.html')
+
+
 @app.errorhandler(404)
 def re_route(e):
     return render_template('page-404.html')
 
-@app.errorhandler(401)
+
+@app.errorhandler(500)
 def re_route(e):
-    return redirect(url_for('login'))
+    return render_template('page-500.html')
+
+
+
