@@ -23,47 +23,41 @@
                         <form>
                             {{ form.hidden_tag() }}
                             <div class="form-group">
-                                <label class="form-control-label">Username</label>
+                                <!-- <label class="form-control-label">Username</label> -->
                                 <div class="input-group">
                                     <div class="input-group-prepend">
-                                        <span class="input-group-text"><i data-feather="user"></i></span>
+                                        <!-- <span class="input-group-text"><i data-feather="user"></i></span> -->
+                                        {{ wtf.form_field(form.username) }}
                                     </div>
-                                    <input type="email" class="form-control" id="input-email"
-                                        placeholder="name@example.com">
-                                    {{ wtf.form_field(form.username) }}
                                 </div>
                             </div>
 
                             <div class="form-group">
-                                <label class="form-control-label">Email</label>
+                                <!-- <label class="form-control-label">Email</label> -->
                                 <div class="input-group">
                                     <div class="input-group-prepend">
-                                        <span class="input-group-text"><i data-feather="mail"></i></span>
+                                        <!-- <span class="input-group-text"><i data-feather="mail"></i></span> -->
+                                        {{ wtf.form_field(form.email) }}
                                     </div>
-                                    <input type="email" class="form-control" id="input-email"
-                                        placeholder="name@example.com">
-                                    {{ wtf.form_field(form.email) }}
                                 </div>
                             </div>
 
                             <div class="form-group mb-0">
                                 <div class="d-flex align-items-center justify-content-between">
                                     <div>
-                                        <label class="form-control-label">Password</label>
+                                        <!-- <label class="form-control-label">Password</label> -->
                                     </div>
                                 </div>
                                 <div class="input-group">
                                     <div class="input-group-prepend">
-                                        <span class="input-group-text"><i data-feather="key"></i></span>
+                                        <!-- <span class="input-group-text"><i data-feather="key"></i></span> -->
+                                        {{ wtf.form_field(form.password) }}
                                     </div>
-                                    <input type="password" class="form-control" id="input-password"
-                                        placeholder="Password">
-                                    {{ wtf.form_field(form.password) }}
                                 </div>
                             </div>
                             <div class="mt-4">
-                                <button type="button" class="btn btn-block btn-primary">Create Account</button>
-                                {{ wtf.form_field(form.submit)}}
+                                <!-- <button type="button" class="btn btn-block btn-primary">Create Account</button> -->
+                                <center>{{ wtf.form_field(form.submit)}}</center>
                             </div>
                         </form>
                     </div>

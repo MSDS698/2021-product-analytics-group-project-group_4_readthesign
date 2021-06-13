@@ -6,6 +6,7 @@ from wtforms import PasswordField, StringField, SubmitField
 from wtforms.validators import DataRequired
 
 from app import db, login_manager
+# from app import db, lm
 
 class User(db.Model, UserMixin):
     id = db.Column(db.Integer, primary_key=True)
@@ -26,7 +27,7 @@ class User(db.Model, UserMixin):
 
 class RegistrationForm(FlaskForm):
     username = StringField('Username:', validators=[DataRequired()])
-    email = StringField('Email:--->', validators=[DataRequired()])
+    email = StringField('Email:', validators=[DataRequired()])
     password = PasswordField('Password:', validators=[DataRequired()])
     submit = SubmitField('Submit')
 

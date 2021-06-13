@@ -1,4 +1,6 @@
-from app import app, classes, db
+from app import app, classes
+# from app.models import User
+# from app.forms  import LoginForm, RegisterForm
 from flask import render_template, redirect, url_for, flash
 from flask_wtf import FlaskForm
 from flask_wtf.file import FileField, FileRequired
