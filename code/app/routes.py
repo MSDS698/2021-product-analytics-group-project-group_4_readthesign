@@ -10,16 +10,6 @@ from flask_login import current_user, login_user, login_required, logout_user
 # from flask import Flask
 import os
 
-team_list = [
-    {'name': 'Kyle Brook', 'title': "CEO"},
-    {'name': 'Trevor Santiago', 'title': "CTO"},
-    {'name': 'Efrem Ghebreab', 'title': "Data Scientist"},
-    {'name': 'Wonseok Choi', 'title': "Software Engineer"},
-    {'name': 'Anni Liu ', 'title': "Data Scientist"},
-    {'name': 'Dawn(shuyan Li)', 'title': "Software Engineer"},
-    {'name': 'Janson(Ye Tao)', 'title': "Data Scientist"}
-]
-
 
 @app.route('/')
 def index():
@@ -37,12 +27,12 @@ def about():
     return render_template('about.html')
 
 
-@app.route('/team')
-def team():
-    """
-    teams page
-    """
-    return render_template('team.html', names=team_list)
+# @app.route('/upload')
+# def ():
+#     """
+#     teams page
+#     """
+#     return render_template('contact.html')
 
 
 class UploadFileForm(FlaskForm):
