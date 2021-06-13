@@ -22,9 +22,11 @@
                 <li class="nav-item ">
                     <a class="nav-link" href="/register">Register</a>
                 </li>
+                {% if authenticated_user %}
                 <li class="nav-item">
                     <a class="nav-link" href="/upload">Translate</a>
                 </li>
+                {% endif %}
             </ul>
             <!-- Button -->
             {% if authenticated_user %}
