@@ -1,80 +1,66 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Consulting</title>
-    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='style.css') }}" > 
+{% extends "layouts/base.html" %}
 
-</head>
-<body>
+{% block title %} Home {% endblock %}
+
+<!-- Specific Page CSS goes HERE  -->
+{% block stylesheets %}{% endblock stylesheets %}
+
+{% block content %}
+
+<!-- Main content -->
+<section class="slice py-7">
     <div class="container">
-        <div class="header">
-            <h2>ASL TRANSLATION</h2>
-            <h4>
-                <span id="color">
-                    Home
-                </span>
-            </h4>
-            <h4><a href="/about">About</a></h4>
-            <h4><a href="team">TEAM</a></h4>
-            <h4><a href="services">Services</a></h4>
-            <h4><a href="clients">Clients</a></h4>       
-        </div>
-    <div class="main-content">
-        <div class="activities">
-            <div class="subheader">
-                <h2>SERVICES</h2>
+        <div class="row row-grid align-items-center">
+            <div class="col-12 col-md-5 col-lg-6 order-md-2 text-center">
+                <!-- Image -->
+                <figure class="w-100">
+                    <img alt="Image placeholder" src="/static/assets/img/svg/illustrations/illustration-3.svg"
+                        class="img-fluid mw-md-120">
+                </figure>
             </div>
-            <p>Given the prevalence of disabling hearing loss in society, our product is envisioned to be an application that would translate from American Sign Language (ASL) to English. Included in our customer segment are families/workplaces with ASL users and schools ......
-            </p>
-            <button>More info</button>
-        </div>
-        <div class="activities" id="middle-activities">
-            <div class="subheader">
-                <h2>Files</h2>
-            </div>
-            <button><a href="/upload">Upload</a></button>
-        </div>
-        <div class="activities">
-            <div class="subheader">
-                <h2>Account</h2>
-            </div>
-            <button><a href="/login">Login</a></button>
-            <button><a href="/register">Register</a></button>
-        </div>
-        <div class="lower-content">
-            <h3>THE WORLD CAN BE YOURS!</h3>
-            <div id="image"></div>
-            <img src="building.png" alt="">
-        </div>
-        <div class="lower-content" id="middle">
-            <p>Given the prevalence of disabling hearing loss in society, our product is envisioned to be an application that would translate from American Sign Language (ASL) to English. Included in our customer segment are families/workplaces with ASL users and schools that may want a more efficient way for ASL users to communicate with students/teachers.
-           </p>
-            <p>check out our custom solutions and services.</p>
-            <div id="link">
-                <a href="Learn more">Learn more</a>
+            <div class="col-12 col-md-7 col-lg-6 order-md-1 pr-md-5">
+                <!-- Heading -->
+                <h1 class="display-4 text-center text-md-left mb-3">
+                    <a target="_blank" href="https://appseed.us/boilerplate-code/flask-boilerplate">
+                        ReadThe<strong class="text-primary">Sign</strong>
+                    </a>
+                </h1>
+                <!-- Text -->
+                <p class="lead text-center text-md-left text-muted">
+                    This is placeholder text
+                </p>
+                <!-- Buttons -->
+                <div class="text-center text-md-left mt-5">
+                    <a href="/login" class="btn btn-primary btn-icon" target="_blank">
+                        <span class="btn-inner--text">Login</span>
+                        <span class="btn-inner--icon"><i data-feather="chevron-right"></i></span>
+                    </a>
+                </div>
             </div>
         </div>
-        <div class="lower-content">
-            <h3>TESTIMONIAL</h3>
-            <div id="quote">
-                <p>"We are here to change your future. We are a Team of professionals taking initiatives to the better Future!!"</p>
-            </div>
-            <div id="name">
-                <a href="/team">Kyle Brooks, CEO</a>
-                <a href="/team">Trevor, CTO</a>
-            </div>
-        </div>        
     </div>
-    <div class="footer">
-        <a href="">Home</a>
-        <a href="">About</a>
-        <a href="">Services</a>
-        <a href="">Team</a>
-        <a href="">Clients</a>
+</section>
+
+<section class="slice slice-lg pt-lg-6 pb-0 pb-lg-6 bg-section-secondary">
+    <div class="container">
+        <!-- Title -->
+        <!-- Section title -->
+        <div class="row mb-5 justify-content-center text-center">
+            <div class="col-lg-6">
+                <div class="mt-2">
+                    <p class="lead lh-180">Given the prevalence of disabling hearing loss in society,
+                        our product is envisioned to be an application that would
+                        translate from American Sign Language (ASL) to English.
+                        Included in our customer segment are families/workplaces
+                        with ASL users and schools that may want a more efficient
+                        way for ASL users to communicate with students/teachers.</p>
+                </div>
+            </div>
+        </div>
     </div>
-    </div>
-</body>
-</html>
+</section>
+
+{% endblock content %}
+
+<!-- Specific Page JS goes HERE  -->
+{% block javascripts %}{% endblock javascripts %}

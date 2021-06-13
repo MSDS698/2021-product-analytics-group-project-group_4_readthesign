@@ -1,7 +1,7 @@
-from flask import Flask 
 import os 
 from flask import Flask
 from config import Config
+from flask_bootstrap import Bootstrap
 from flask_sqlalchemy import SQLAlchemy
 from flask_login import LoginManager
 
@@ -21,5 +21,7 @@ db.session.commit()
 login_manager = LoginManager()
 login_manager.init_app(app)
 
-from app import routes
-from app import classes 
+bootstrap = Bootstrap(app)
+
+# Import routing, models and Start the App
+from app import routes, classes
