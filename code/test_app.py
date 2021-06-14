@@ -13,5 +13,4 @@ def test_db_presence():
 	assert (inspect.dialect.has_table(engine, "user"))
 
 def test_User():
-
 	assert UserFromDB("Efrem").username == "Efrem"
