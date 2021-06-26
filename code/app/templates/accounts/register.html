@@ -1,6 +1,11 @@
 {% extends "layouts/base-fullscreen.html" %}
 
-{% block title %} Register {% endblock %} 
+{% block head %}
+{% include "ga.html" %}
+{{ super() }}
+{% endblock %}
+
+{% block title %} Register {% endblock %}
 
 <!-- Specific Page CSS goes HERE  -->
 {% block stylesheets %}{% endblock stylesheets %}
@@ -30,7 +35,7 @@
                             </div>
                             <span class="clearfix"></span>
 
-                            <!-- Hide the form on success--> 
+                            <!-- Hide the form on success-->
                             {% if not success %}
                             <form method="post" action="" class="mt-4">
 

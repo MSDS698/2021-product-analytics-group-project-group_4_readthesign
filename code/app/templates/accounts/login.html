@@ -1,6 +1,11 @@
 {% extends "layouts/base-fullscreen.html" %}
 
-{% block title %} Login {% endblock %} 
+{% block head %}
+{% include "ga.html" %}
+{{ super() }}
+{% endblock %}
+
+{% block title %} Login {% endblock %}
 
 <!-- Specific Page CSS goes HERE  -->
 {% block stylesheets %}{% endblock stylesheets %}
@@ -25,7 +30,7 @@
                                         {{ msg | safe }}
                                     {% else %}
                                         Use default credentials: <strong>test / pass</strong>
-                                    {% endif %}     
+                                    {% endif %}
                                 </p>
                             </div>
                             <span class="clearfix"></span>
@@ -42,7 +47,7 @@
                                         {{ form.username(class="form-control") }}
                                     </div>
                                 </div>
-                                
+
                                 <div class="form-group mb-0">
                                     <div class="d-flex align-items-center justify-content-between">
                                         <div>

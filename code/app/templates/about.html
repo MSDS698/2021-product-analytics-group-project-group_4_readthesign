@@ -1,5 +1,10 @@
 {% extends "layouts/base.html" %}
 
+{% block head %}
+{% include "ga.html" %}
+{{ super() }}
+{% endblock %}
+
 {% block title %} About {% endblock %}
 
 <!-- Specific Page CSS goes HERE  -->
