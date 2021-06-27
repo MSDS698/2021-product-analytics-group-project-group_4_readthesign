@@ -1,10 +1,7 @@
 import os
 import torch
 import copy
-from tqdm import tqdm_notebook
 from torchvision.transforms.functional import to_pil_image
-import matplotlib.pylab as plt
-from tqdm import tqdm_notebook
 
 device = torch.device("cuda:0" if torch.cuda.is_available() else "cpu")
 def get_vids(path2ajpgs):
@@ -105,7 +102,7 @@ def loss_epoch(model,loss_func,dataset_dl,sanity_check=False,opt=None):
     running_loss=0.0
     running_metric=0.0
     len_data = len(dataset_dl.dataset)
-    for xb, yb in tqdm_notebook(dataset_dl):
+    for xb, yb in dataset_dl:
         xb=xb.to(device)
         yb=yb.to(device)
         output=model(xb)
@@ -119,27 +116,6 @@ def loss_epoch(model,loss_func,dataset_dl,sanity_check=False,opt=None):
     loss=running_loss/float(len_data)
     metric=running_metric/float(len_data)
     return loss, metric
-
-
-def plot_loss(loss_hist, metric_hist):
-
-    num_epochs= len(loss_hist["train"])
-
-    plt.title("Train-Val Loss")
-    plt.plot(range(1,num_epochs+1),loss_hist["train"],label="train")
-    plt.plot(range(1,num_epochs+1),loss_hist["val"],label="val")
-    plt.ylabel("Loss")
-    plt.xlabel("Training Epochs")
-    plt.legend()
-    plt.show()
-
-    plt.title("Train-Val Accuracy")
-    plt.plot(range(1,num_epochs+1), metric_hist["train"],label="train")
-    plt.plot(range(1,num_epochs+1), metric_hist["val"],label="val")
-    plt.ylabel("Accuracy")
-    plt.xlabel("Training Epochs")
-    plt.legend()
-    plt.show()
 
     
 from torch import nn
