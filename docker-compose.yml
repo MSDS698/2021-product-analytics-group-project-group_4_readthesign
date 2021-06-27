@@ -13,32 +13,17 @@ services:
     networks:
       - default
       - read_sign_network
-
-  # cron:
-  #   build:
-  #     context: ../02_cron
-  #     dockerfile: Dockerfile
-  #   container_name: cron
-  #   depends_on:
-  #     - web
-  #   ports:
-  #     - "80"
-  #   networks:
-  #     - default
-  #     - read_sign_network
-
-  # Janson model container 
-  # services: 
-  #   dl_model:
-  #     build:
-  #       context: ../src
-  #       dockerfile: dockerfile
-  #     ports:
-  #       - "80:80"
-  #       - AWS_ACCESS_KEY_ID=${AWS_ACCESS_KEY_ID}
-  #       - AWS_SECRET_ACCESS_KEY=${AWS_SECRET_ACCESS_KEY}
-
-
-
+  model:
+    build:
+      context: model
+      dockerfile: Dockerfile
+    container_name: model
+    depends_on: 
+      - web
+    ports:
+      - "80"
+    networks: 
+      - default
+      - read_sign_network
 networks:
    read_sign_network:
