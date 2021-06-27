@@ -6,6 +6,10 @@ from flask_login import current_user, login_user, login_required, logout_user
 
 # from flask import Flask
 import os
+import sys
+
+# sys.path.append("../model/")
+from predict import pred
 
 
 @app.route('/')
@@ -35,12 +39,13 @@ def upload():
         f = file.file_selector.data  # f : Data of FileField
         filename = f.filename
         # filename : filename of FileField
-
         file_dir_path = os.path.join(app.instance_path, 'files')
         file_path = os.path.join(file_dir_path, filename)
         # Save file to file_path (instance/ + 'files’ + filename)
         f.save(file_path)
-
+        print('hi')
+        result = pred(file_path)  # run prediction on input data
+        print(result)
         return redirect(url_for('index'))  # Redirect to / (/index) page.
     return render_template('upload.html', form=file, authenticated_user=current_user.is_authenticated)
 
