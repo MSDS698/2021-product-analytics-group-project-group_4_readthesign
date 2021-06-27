@@ -38,6 +38,19 @@
                     <p><input type=submit class='btn btn-warning btn-block'></p>
                 </form>
             </div>
+            <div id="output" class="col-lg-6" style="display: display()">
+                <!-- Heading -->
+                <script type="text/javascript">
+                function display() { var display =""; if ({{result}} != null) display="block";  else display="none";return display}
+                </script>
+                <h1 class="h1 text-white text-center text-lg-left my-4">
+                    {{output}} 
+                </h1>
+                <!-- Text -->
+                <p class="lead text-white text-center text-lg-left opacity-8">
+                    {{result}}
+                </p>
+            </div>
         </div>
     </div>
     <!-- SVG separator -->
