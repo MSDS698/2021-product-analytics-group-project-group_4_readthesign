@@ -1,10 +1,8 @@
 import os
 import torch
 import copy
-from tqdm import tqdm_notebook
 from torchvision.transforms.functional import to_pil_image
 import matplotlib.pylab as plt
-from tqdm import tqdm_notebook
 
 device = torch.device("cuda:0" if torch.cuda.is_available() else "cpu")
 def get_vids(path2ajpgs):
@@ -105,7 +103,7 @@ def loss_epoch(model,loss_func,dataset_dl,sanity_check=False,opt=None):
     running_loss=0.0
     running_metric=0.0
     len_data = len(dataset_dl.dataset)
-    for xb, yb in tqdm_notebook(dataset_dl):
+    for xb, yb in dataset_dl:
         xb=xb.to(device)
         yb=yb.to(device)
         output=model(xb)
