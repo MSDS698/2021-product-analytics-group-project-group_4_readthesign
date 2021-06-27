@@ -8,7 +8,7 @@ from flask_login import current_user, login_user, login_required, logout_user
 import os
 import sys
 
-sys.path.append("../model/")
+# sys.path.append("../model/")
 from predict import pred
 
 

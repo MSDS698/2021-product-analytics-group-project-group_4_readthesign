@@ -12,3 +12,4 @@ pip-chill==1.0.1
 sklearn==0.0
 transformers==4.6.1
 psycopg2==2.8.6
+opencv-python
