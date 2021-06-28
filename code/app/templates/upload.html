@@ -41,15 +41,15 @@
             <div id="output" class="col-lg-6" style="display: display()">
                 <!-- Heading -->
                 <script type="text/javascript">
-                function display() { var display =""; if ({{result}} != null) display="block";  else display="none";return display}
+                    function display() { var display = ""; if ( {{ result }} != null) display = "block";  else display = "none"; return display}
                 </script>
                 <h1 class="h1 text-white text-center text-lg-left my-4">
-                    {{output}} 
+                    {{output}}
                 </h1>
                 <!-- Text -->
-                <p class="lead text-white text-center text-lg-left opacity-8">
+                <h2 class="h2 text-white text-center text-lg-left opacity-8">
                     {{result}}
-                </p>
+                </h2>
             </div>
         </div>
     </div>

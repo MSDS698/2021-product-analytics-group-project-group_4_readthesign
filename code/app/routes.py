@@ -46,7 +46,8 @@ def upload():
         result = pred(file_path)  # run prediction on input data
         os.remove(file_path)
         output = 'Our Prediction:'
-        return render_template('upload.html', form=file, result=result, output=output)  # Redirect to / (/index) page.
+        result = f'"{result.title()}"'
+        return render_template('upload.html', form=file, result=result.title(), output=output)  # Redirect to / (/index) page.
     return render_template('upload.html', form=file, authenticated_user=current_user.is_authenticated)
 
 @app.route('/register',  methods=('GET', 'POST'))
