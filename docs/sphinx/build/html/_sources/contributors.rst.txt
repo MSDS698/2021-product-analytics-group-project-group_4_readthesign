@@ -1,17 +1,23 @@
 Contributors
 ==========================================
 
-| **CEO**
-| Kyle Brooks
+| **Kyle Brooks**
+| CEO & Data Engineer
 |
-| **CTO**
-| Trevor Santiago
+| **Trevor Santiago**
+| CTO & Frontend Dev
 |
-| **Engineers**
-| Efrem Ghebreab
-| Dawn (Shuyan Li)
+| **Anni Liu**
+| Data Scientist & Backend Dev
 |
-| **Data scientists**
-| Ye Tao
-| Wonseok Choi
-| Anni Liu
+| **Dawn (Shuyan Li)**
+| Data Scientist & Backend Dev
+|
+| **Efrem Ghebreab**
+| Data Scientist & Frontend Dev
+|
+| **Wonseok Choi**
+| Data Scientist
+|
+| **Ye Tao (Janson)**
+| Lead Designer & Data Scientist
