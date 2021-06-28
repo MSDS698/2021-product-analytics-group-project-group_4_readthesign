@@ -43,11 +43,9 @@ def upload():
         file_path = os.path.join(file_dir_path, filename)
         # Save file to file_path (instance/ + 'files’ + filename)
         f.save(file_path)
-        print('hi')
-        result = 'Emmma Jigna'
-        output = 'Our Result'
+        result = pred(file_path)
+        output = 'Our Prediction:'
         # result = pred(file_path)  # run prediction on input data
-        print(result)
         return render_template('upload.html', form=file, result=result, output=output)  # Redirect to / (/index) page.
     return render_template('upload.html', form=file, authenticated_user=current_user.is_authenticated)
 

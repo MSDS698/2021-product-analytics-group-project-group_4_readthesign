@@ -16,7 +16,7 @@ def pred(path2vido):
     # len(frames), v_len
 
     # load model
-    path2weights = "../model/weights.pt"
+    path2weights = "weights.pt"
     model.load_state_dict(torch.load(path2weights))
     model.to(device)
 
@@ -28,7 +28,7 @@ def pred(path2vido):
         # print(out.shape)
         predidx  = torch.argmax(out).item()
 
-        with open('../model/idx2text.txt', 'r') as f:
+        with open('idx2text.txt', 'r') as f:
             idx2text = f.read().replace("\'", "\"")
             idx2text = json.loads(idx2text)
             predtext = (list(idx2text.items())[predidx][0])
