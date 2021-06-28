@@ -43,7 +43,7 @@ def upload():
         os.remove(file_path)
         output = 'Our Prediction:'
         result = f'"{result.title()}"'
-        return render_template('upload.html', form=file, result=result.title(), output=output)  # Redirect to / (/index) page.
+        return render_template('upload.html', form=file, result=result.title(), output=output, authenticated_user=current_user.is_authenticated)  # Redirect to / (/index) page.
     return render_template('upload.html', form=file, authenticated_user=current_user.is_authenticated)
 
 @app.route('/register',  methods=('GET', 'POST'))
@@ -93,6 +93,7 @@ def login():
 
 
 @app.route('/logout')
+@login_required
 def logout():
     """
     Log out
