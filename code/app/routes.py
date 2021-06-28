@@ -1,14 +1,10 @@
 from app import app, classes, db
-# from app.models import User
-# from app.forms  import LoginForm, RegisterForm
 from flask import render_template, redirect, url_for, flash
 from flask_login import current_user, login_user, login_required, logout_user
 
-# from flask import Flask
 import os
 import sys
 
-# sys.path.append("../model/")
 from predict import pred
 
 
@@ -43,12 +39,12 @@ def upload():
         file_path = os.path.join(file_dir_path, filename)
         # Save file to file_path (instance/ + 'files’ + filename)
         f.save(file_path)
-        print('hi')
         result = pred(file_path)  # run prediction on input data
-        print(result)
-        return redirect(url_for('index'))  # Redirect to / (/index) page.
+        os.remove(file_path)
+        output = 'Our Prediction:'
+        result = f'"{result.title()}"'
+        return render_template('upload.html', form=file, result=result.title(), output=output, authenticated_user=current_user.is_authenticated)  # Redirect to / (/index) page.
     return render_template('upload.html', form=file, authenticated_user=current_user.is_authenticated)
-
 
 @app.route('/register',  methods=('GET', 'POST'))
 def register():
@@ -97,6 +93,7 @@ def login():
 
 
 @app.route('/logout')
+@login_required
 def logout():
     """
     Log out

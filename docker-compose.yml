@@ -10,22 +10,8 @@ services:
       - AWS_ACCESS_KEY_ID=${AWS_ACCESS_KEY_ID}
       - AWS_SECRET_ACCESS_KEY=${AWS_SECRET_ACCESS_KEY}
     container_name: web
-    # depends_on: 
-    #   - model
     networks:
       - default
       - read_sign_network
-  # model:
-  #   build:
-  #     context: model
-  #     dockerfile: Dockerfile
-  #   container_name: model
-  #   # depends_on: 
-  #   #   - web
-  #   ports:
-  #     - "80"
-  #   networks: 
-  #     - default
-  #     - read_sign_network
 networks:
    read_sign_network:
