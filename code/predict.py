@@ -7,7 +7,7 @@ import myutils
 
 def pred(path2vido):
     model_type = "rnn"
-    model = myutils.get_model(model_type=model_type, num_classes=20)
+    model = myutils.get_model(model_type=model_type, num_classes=181)
     model.eval()
     device = torch.device("cuda:0" if torch.cuda.is_available() else "cpu")
 
