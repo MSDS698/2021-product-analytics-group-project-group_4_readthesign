@@ -1,14 +1,10 @@
 from app import app, classes, db
-# from app.models import User
-# from app.forms  import LoginForm, RegisterForm
 from flask import render_template, redirect, url_for, flash
 from flask_login import current_user, login_user, login_required, logout_user
 
-# from flask import Flask
 import os
 import sys
 
-# sys.path.append("../model/")
 from predict import pred
 
 
